@@ -3,9 +3,9 @@ require_once '../config/db_connect.php';
 // echo 'Connecté à resavelo';
 require_once '../includes/functions_velos.php';
 
-$disponible = isset($_GET['disponible']) ? $_GET['disponible'] : '';
-$prix_min = isset($_GET['prix_min']) ? (float)$_GET['prix_min'] : null;
-$prix_max = isset($_GET['prix_max']) ? (float)$_GET['prix_max'] : null;
+$disponible = $_GET['disponible'] ?? '';
+$prix_min = $_GET['prix_min'] ?? null;
+$prix_max = $_GET['prix_max'] ?? null;
 
 $velos = getAllVelos($pdo, $disponible, $prix_min, $prix_max);
 
@@ -32,11 +32,11 @@ $velos = getAllVelos($pdo, $disponible, $prix_min, $prix_max);
         </label>
 
         <label>Prix minimum :
-            <input type="number" name="prix_min" placeholder="15€">
+            <input type="number" name="prix_min" placeholder="0€">
         </label>
 
         <label>Prix maximum :
-            <input type="number" name="prix_max" placeholder="30€">
+            <input type="number" name="prix_max" placeholder="1000€">
         </label>
 
         <button type="submit">Filtrer</button>
@@ -72,16 +72,3 @@ $velos = getAllVelos($pdo, $disponible, $prix_min, $prix_max);
 </body>
 
 </html>
-
-
-<?php
-
-
-if (!empty($velos)) {
-
-    foreach ($velos as $velo) {
-        // echo $velo['name'];
-    }
-} else {
-    // echo 'Aucun vélo trouvé';
-}
