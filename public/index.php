@@ -3,7 +3,11 @@ require_once '../config/db_connect.php';
 // echo 'Connecté à resavelo';
 require_once '../includes/functions_velos.php';
 
-$velos = getAllVelos($pdo);
+$disponible = isset($_GET['disponible']) ? $_GET['disponible'] : '';
+$prix_min = isset($_GET['prix_min']) ? (float)$_GET['prix_min'] : null;
+$prix_max = isset($_GET['prix_max']) ? (float)$_GET['prix_max'] : null;
+
+$velos = getAllVelos($pdo, $disponible, $prix_min, $prix_max);
 
 ?>
 
@@ -18,6 +22,26 @@ $velos = getAllVelos($pdo);
 
 <body>
     <h1>Liste des vélos</h1>
+
+    <form method="GET" action="">
+        <label>Disponibilité :
+            <select name="disponible">
+                <option value="">Tous</option>
+                <option value="1">Disponibles</option>
+            </select>
+        </label>
+
+        <label>Prix minimum :
+            <input type="number" name="prix_min" placeholder="15€">
+        </label>
+
+        <label>Prix maximum :
+            <input type="number" name="prix_max" placeholder="30€">
+        </label>
+
+        <button type="submit">Filtrer</button>
+        <a href="index.php">Réinitialiser</a>
+    </form>
 
     <table>
         <thead>
@@ -39,7 +63,7 @@ $velos = getAllVelos($pdo);
                     <td><?php echo $velo['price']; ?> €</td>
                     <td><?php echo $velo['quantity']; ?></td>
                     <td><?php echo $velo['description']; ?></td>
-                    <td><img src="<?= '../assets/imgs/'.$velo['image_url'] ;?>" width="50" height="50"></td>
+                    <td><img src="<?= '../assets/imgs/' . $velo['image_url']; ?>" width="50" height="50"></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

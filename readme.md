@@ -1,3 +1,12 @@
+# TODO
+1. ✅ Catalogue public (FAIT)
+2. 🔄 Filtres sur le catalogue (rapide - 15 min)
+3. 🔄 CRUD Vélos admin (important - 1h)
+4. 🔄 Système de réservation (complexe - 1h30)
+5. 🔄 Gestion réservations admin (30 min)
+6. 🔄 Tableau de bord stats (30 min)
+7. 🔄 CSS personnalisé (1h)
+
 # FOAD PHP - Location de vélos : RESAVELO
 
 Le but de la FOAD du jour est de développer une application de location de vélo de ville.

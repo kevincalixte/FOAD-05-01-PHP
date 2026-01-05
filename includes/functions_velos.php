@@ -1,5 +1,5 @@
 <?php
-function getAllVelos($pdo)
+function getAllVelos($pdo, $disponible = '', $prix_min = null, $prix_max = null)
 {
     try {
         $sql = 'SELECT * FROM velos';
