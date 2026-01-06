@@ -1,7 +1,7 @@
 # TODO
 1. ✅ Catalogue public (FAIT)
-2. 🔄 Filtres sur le catalogue (rapide - 15 min)
-3. 🔄 CRUD Vélos admin (important - 1h)
+2. ✅ Filtres sur le catalogue (FAIT)
+3. ✅ CRUD Vélos admin (FAIT)
 4. 🔄 Système de réservation (complexe - 1h30)
 5. 🔄 Gestion réservations admin (30 min)
 6. 🔄 Tableau de bord stats (30 min)

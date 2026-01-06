@@ -18,10 +18,11 @@ $velos = getAllVelos($pdo, $disponible, $prix_min, $prix_max);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des vélos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>Liste des vélos</h1>
+<body class="flex flex-col items-center justify-center my-15">
+    <h1 class='text-blue-500 text-2xl p-10'>Liste des vélos</h1>
 
     <form method="GET" action="">
         <label>Disponibilité :
@@ -43,7 +44,7 @@ $velos = getAllVelos($pdo, $disponible, $prix_min, $prix_max);
         <a href="index.php">Réinitialiser</a>
     </form>
 
-    <table>
+    <table class="border">
         <thead>
             <tr>
                 <th>ID</th>
