@@ -18,11 +18,13 @@ $velos = getAllVelos($pdo, $disponible, $prix_min, $prix_max);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des vélos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body class="flex flex-col items-center justify-center my-15">
-    <h1 class='text-blue-500 text-2xl p-10'>Liste des vélos</h1>
+<body >
+    <h1>Liste des vélos</h1>
+
+    <a href="../admin/index.php">Admin</a>
 
     <form method="GET" action="">
         <label>Disponibilité :
@@ -44,7 +46,7 @@ $velos = getAllVelos($pdo, $disponible, $prix_min, $prix_max);
         <a href="index.php">Réinitialiser</a>
     </form>
 
-    <table class="border">
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -53,6 +55,7 @@ $velos = getAllVelos($pdo, $disponible, $prix_min, $prix_max);
                 <th>Quantité</th>
                 <th>Description</th>
                 <th>Image</th>
+                <th>Action</th>
             </tr>
         </thead>
 
@@ -65,6 +68,7 @@ $velos = getAllVelos($pdo, $disponible, $prix_min, $prix_max);
                     <td><?php echo $velo['quantity']; ?></td>
                     <td><?php echo $velo['description']; ?></td>
                     <td><img src="<?= '../assets/imgs/' . $velo['image_url']; ?>" width="50" height="50"></td>
+                    <td><a href="reservation_form.php?velo_id=<?php echo $velo['id']; ?>">Réserver</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

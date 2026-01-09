@@ -36,12 +36,15 @@ if (!$velo) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier un vélo - <?= $id_velo ?></title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
     <h1>Modifier un vélo - <?= $id_velo ?></h1>
+
+    <a href="../public/index.php">Client</a> | 
+    <a href="index.php">Tableau de bord</a> | 
+    <a href="velos.php">Gestion vélos</a>
 
     <form action="" method="POST">
 
